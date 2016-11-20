@@ -1,0 +1,99 @@
+body {
+  font-family: 'Slabo 27px', sans-serif; }
+
+button {
+  border: 0;
+  font-size: 1.25rem;
+  font-family: 'Chewy', sans-serif;
+  letter-spacing: 0.15em;
+  padding: 1.5rem 2rem;
+  cursor: pointer; }
+
+.wrapper {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden; }
+
+.card {
+  flex: 1 1 auto;
+  min-height: 400px;
+  max-width: 300px;
+  background: papayawhip;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.75rem rgba(0, 0, 0, 0.05); }
+  .card.enter {
+    animation: enter 400ms forwards; }
+  .card.exit.right {
+    animation: exit-right 800ms forwards; }
+  .card.exit.left {
+    animation: exit-left 800ms forwards; }
+  .card article {
+    padding: 1.5rem;
+    flex: 1 1 auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column; }
+    .card article h4 {
+      margin: 0 0 1.5rem;
+      padding: 1rem 0 1rem;
+      flex-grow: 0;
+      font-size: 1.2rem;
+      color: #563500;
+      font-family: 'Chewy', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-bottom: 2px solid #d58400; }
+    .card article p {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #6f4500;
+      letter-spacing: 0.01em;
+      line-height: 1.4; }
+  .card button {
+    text-align: right;
+    background: rgba(0, 0, 0, 0.05);
+    text-transform: uppercase;
+    color: #563500;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem; }
+    .card button:focus {
+      outline: 0; }
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: scale3d(0, 0, 0); }
+  80% {
+    transform: scale3d(1.05, 1.05, 1.05);
+    opacity: 1; }
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1; } }
+@keyframes exit-right {
+  0% {
+    transform: translate(0) rotate(0) scale3d(1, 1, 1);
+    opacity: 1; }
+  80% {
+    opacity: 0; }
+  100% {
+    transform: translate(-150%, -40%) rotate(-270deg) scale3d(0.75, 0.75, 0.75);
+    opacity: 0; } }
+@keyframes exit-left {
+  0% {
+    transform: translate(0) rotate(0) scale3d(1, 1, 1);
+    opacity: 1; }
+  80% {
+    opacity: 0; }
+  100% {
+    transform: translate(150%, -40%) rotate(270deg) scale3d(0.75, 0.75, 0.75);
+    opacity: 0; } }
+
+/*# sourceMappingURL=maoain.css.map */

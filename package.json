@@ -1,0 +1,23 @@
+{
+  "name": "flash-cards-js",
+  "version": "1.0.0",
+  "description": "Flash Cards for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LjCraft12/Flash-Cards-Js.git"
+  },
+  "keywords": [
+    "flash",
+    "cards"
+  ],
+  "author": "Perry Craft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LjCraft12/Flash-Cards-Js/issues"
+  },
+  "homepage": "https://github.com/LjCraft12/Flash-Cards-Js#readme"
+}
