@@ -1,7 +1,24 @@
+$primary: papayawhip;
+$primary-dark: darken($primary, 75%);
+
+
 body {
   font-family: 'Slabo 27px', sans-serif;
-  background-image: url("../Classroom.jpg")
+  background-image: url("../Classroom.jpg");
+  background-size: cover;
 }
+
+.question {
+  max-width: 80%;
+  font-size: 2em;
+  color: $primary-dark;
+  border-bottom: 2px solid $primary-dark;
+  text-align: center;
+  font-family: 'Chewy', sans-serif;
+  margin: -.5em auto 0;
+  max-width: 50%;
+}
+
 button {
   border: 0;
   font-size: 1.25rem;
@@ -10,7 +27,8 @@ button {
   padding: 1.5rem 2rem;
   cursor: pointer;
 }
-.wrapper { 
+
+.wrapper {
   padding: 0 1rem;
   display: flex;
   justify-content: center;
@@ -24,12 +42,12 @@ button {
   flex: 1 1 auto;
   min-height: 550px;
   max-width: 400px;
-  background: papayawhip;
+  background: $primary;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 0.5rem;
-  box-shadow: 0 0.2rem 0.75rem rgba(black,0.05);
+  box-shadow: 0 0.2rem 0.75rem rgba(black, 0.05);
   &.enter {
     animation: enter 400ms forwards;
   }
@@ -43,35 +61,58 @@ button {
   }
   article {
     padding: 1.5rem;
-    flex:1 1 auto;
+    flex: 1 1 auto;
     color: #fff;
     display: flex;
     flex-direction: column;
-    h4 {
-      margin: 0 0 1.5rem;
-      padding: 1rem 0 1rem;
+    h3 {
+      margin: 0 auto;
+      padding: .5rem 0;
       flex-grow: 0;
-      font-size: 1.2rem;
-      color: darken(papayawhip, 75%);
+      font-size: 5.2rem;
+      color: $primary-dark;
       font-family: 'Chewy', sans-serif;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      border-bottom: 2px solid darken(papayawhip, 50%);
+      text-align: right;
+      line-height: 1.5;
+      min-width: 80%;
+      #operator {
+        float: left;
+      }
+      #bottom-number {
+        float: right;
+      }
+      +h3 {
+        border-bottom: 2px solid $primary-dark;
+      }
+    }
+    input {
+      min-width: 80%;
+      &:focus {
+        outline: 0;
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
     }
     p {
       margin: 0;
       font-size: 1.25rem;
-      color: darken(papayawhip, 70%);
+      color: $primary-dark;
       letter-spacing: 0.01em;
       line-height: 1.4;
     }
   }
   button {
     text-align: right;
-    background: rgba(black,0.05);
+    background: rgba(black, 0.05);
     text-transform: uppercase;
-    color: darken(papayawhip, 75%);
-    text-shadow: 0 1px 1px rgba(black,0.1);
+    text-align: center;
+    color: $primary-dark;
+    text-shadow: 0 1px 1px rgba(black, 0.1);
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     &:focus {
@@ -83,62 +124,59 @@ button {
 @keyframes enter {
   0% {
     opacity: 0;
-    transform: scale3d(0,0,0);
+    transform: scale3d(0, 0, 0);
   }
   80% {
-    transform: scale3d(1.05,1.05,1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
     opacity: 1;
   }
   100% {
-    transform: scale3d(1,1,1);
+    transform: scale3d(1, 1, 1);
     opacity: 1;
   }
 }
 
 @keyframes exit-right {
   0% {
-    transform: translate(0) rotate(0) scale3d(1,1,1);
+    transform: translate(0) rotate(0) scale3d(1, 1, 1);
     opacity: 1;
   }
   80% {
     opacity: 0;
   }
   100% {
-    transform: translate(-150%, -40%) rotate(-270deg)  scale3d(0.75,0.75,0.75);
+    transform: translate(-150%, -40%) rotate(-270deg) scale3d(0.75, 0.75, 0.75);
     opacity: 0;
   }
 }
 
 @keyframes exit-left {
   0% {
-    transform: translate(0) rotate(0) scale3d(1,1,1);
+    transform: translate(0) rotate(0) scale3d(1, 1, 1);
     opacity: 1;
   }
   80% {
     opacity: 0;
   }
   100% {
-    transform: translate(150%, -40%) rotate(270deg)  scale3d(0.75,0.75,0.75);
+    transform: translate(150%, -40%) rotate(270deg) scale3d(0.75, 0.75, 0.75);
     opacity: 0;
   }
 }
-
-// Setting up the form boxes to show the random question text.\
-
-.top-number, .bottom-number{
-  color: red;
-  text-justify: left;
-  margin-top: -.1em;
-}
-.bottom-number{
-  margin-top: 1.5em;
-}
-.operator{
-  justify-content: left;
-}
-.questions{
-  margin: 0;
-}
-#top-number{
-  text-align: center;
+input {
+    margin: 1.5rem 1rem;
+    border: 0;
+    background-color: $primary;
+    font-size: 4rem;
+    min-width: 80%;
+    font-weight: bold;
+    text-align: right;
+    color: $primary-dark;
+     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+      -webkit-appearance: none; 
+      margin: 0;
+      &:focus {
+      outline: none;
+    }
+    }
 }

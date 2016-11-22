@@ -1,6 +1,17 @@
 body {
   font-family: 'Slabo 27px', sans-serif;
-  background-image: url("../Classroom.jpg"); }
+  background-image: url("../Classroom.jpg");
+  background-size: cover; }
+
+.question {
+  max-width: 80%;
+  font-size: 2em;
+  color: #563500;
+  border-bottom: 2px solid #563500;
+  text-align: center;
+  font-family: 'Chewy', sans-serif;
+  margin: -.5em auto 0;
+  max-width: 50%; }
 
 button {
   border: 0;
@@ -41,26 +52,43 @@ button {
     color: #fff;
     display: flex;
     flex-direction: column; }
-    .card article h4 {
-      margin: 0 0 1.5rem;
-      padding: 1rem 0 1rem;
+    .card article h3 {
+      margin: 0 auto;
+      padding: .5rem 0;
       flex-grow: 0;
-      font-size: 1.2rem;
+      font-size: 5.2rem;
       color: #563500;
       font-family: 'Chewy', sans-serif;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      border-bottom: 2px solid #d58400; }
+      text-align: right;
+      line-height: 1.5;
+      min-width: 80%; }
+      .card article h3 #operator {
+        float: left; }
+      .card article h3 #bottom-number {
+        float: right; }
+      .card article h3 + h3 {
+        border-bottom: 2px solid #563500; }
+    .card article input {
+      min-width: 80%; }
+      .card article input:focus {
+        outline: 0; }
+        .card article input:focus input[type=number]::-webkit-inner-spin-button,
+        .card article input:focus input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0; }
     .card article p {
       margin: 0;
       font-size: 1.25rem;
-      color: #6f4500;
+      color: #563500;
       letter-spacing: 0.01em;
       line-height: 1.4; }
   .card button {
     text-align: right;
     background: rgba(0, 0, 0, 0.05);
     text-transform: uppercase;
+    text-align: center;
     color: #563500;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 0.5rem;
@@ -96,21 +124,19 @@ button {
   100% {
     transform: translate(150%, -40%) rotate(270deg) scale3d(0.75, 0.75, 0.75);
     opacity: 0; } }
-.top-number, .bottom-number {
-  color: red;
-  text-justify: left;
-  margin-top: -.1em; }
-
-.bottom-number {
-  margin-top: 1.5em; }
-
-.operator {
-  justify-content: left; }
-
-.questions {
-  margin: 0; }
-
-#top-number {
-  text-align: center; }
+input {
+  margin: 1.5rem 1rem;
+  border: 0;
+  background-color: papayawhip;
+  font-size: 4rem;
+  min-width: 80%;
+  font-weight: bold;
+  text-align: right;
+  color: #563500; }
+  input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+    input::-webkit-inner-spin-button:focus, input::-webkit-outer-spin-button:focus {
+      outline: none; }
 
 /*# sourceMappingURL=main.css.map */

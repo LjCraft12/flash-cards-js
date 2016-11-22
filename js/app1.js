@@ -1,38 +1,44 @@
-var topNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-var bottomNumber = ["1", "2,", "3", "4", "5", "6", "7", "8", "9", "10"];
+// A $( document ).ready() block.
+$(document).ready(function () {
+  newNumber();
+});
 
+var answer = 0;
+let topNumber = Math.floor((Math.random() * 10) + 1);
+let bottomNumber = Math.floor((Math.random() * 10) + 1);
 
-function shuffle(array) {
-  var m = array.length, t, i;
+//Checking user input for correctness
+function checkAnswer() {
+  
+  $('.card_button').click(function () {
+    var input = $('#answer').val();
+    input = parseInt(input);
+    if (input === answer) {
+      $('.card').addClass('exit left');
+      $('.past_number').addClass('Correct');
+      setTimeout(newNumber, 500)
 
-  // While there remain elements to shuffle…
-  while (m) {
-
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * m--);
-
-    // And swap it with the current element.
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
-  }
-
-  return array;
+    } else if (input != answer) {
+      $('.card').addClass('exit right');
+      setTimeout(newNumber, 500);
+    }
+  });
 }
 
-// injecting card number on button press
-var cardNumber = 1;
- function cardToggle() {
-   $('.card').toggleClass('enter exit');
- }
 
- $('.card button' ).click(function() {
-   cardNumber++;
-   $('#question-number').text("Question " + cardNumber);
-   $('.card').toggleClass('left right');
-   cardToggle();
-   setTimeout( cardToggle, 100);  
- });
-
-//Inserting top number to question
-$('#top-number').text(topNumber);
+// Generating new cards and numbers
+function newNumber() {
+  topNumber = Math.floor((Math.random() * 10) + 1);
+  bottomNumber = Math.floor((Math.random() * 10) + 1);
+  answer = topNumber + bottomNumber;
+  // Generating card numbers 
+  $('.card').removeClass('exit right');
+  $('.card').removeClass('exit left');
+  $('#top_number').text(topNumber);
+  $('#bottom_number').text(bottomNumber);
+  $('.card').addClass('enter');
+  $('#answer').val('');
+  $('#answer').focus();
+  checkAnswer();
+  count();
+}
