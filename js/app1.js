@@ -9,7 +9,7 @@ let bottomNumber = Math.floor((Math.random() * 10) + 1);
 
 //Checking user input for correctness
 function checkAnswer() {
-  
+
   $('.card_button').click(function () {
     var input = $('#answer').val();
     input = parseInt(input);
@@ -17,14 +17,13 @@ function checkAnswer() {
       $('.card').addClass('exit left');
       $('.past_number').addClass('Correct');
       setTimeout(newNumber, 500)
-
-    } else if (input != answer) {
+    }
+    else{
       $('.card').addClass('exit right');
       setTimeout(newNumber, 500);
     }
   });
 }
-
 
 // Generating new cards and numbers
 function newNumber() {

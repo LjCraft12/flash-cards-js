@@ -1,7 +1,5 @@
 $primary: papayawhip;
 $primary-dark: darken($primary, 75%);
-
-
 body {
   font-family: 'Slabo 27px', sans-serif;
   background-image: url("../Classroom.jpg");
@@ -163,20 +161,22 @@ button {
     opacity: 0;
   }
 }
+
 input {
-    margin: 1.5rem 1rem;
-    border: 0;
-    background-color: $primary;
-    font-size: 4rem;
-    min-width: 80%;
-    font-weight: bold;
-    text-align: right;
-    color: $primary-dark;
-     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
-      -webkit-appearance: none; 
-      margin: 0;
-      &:focus {
+  margin: 1.5rem 1rem;
+  border: 0;
+  background-color: $primary;
+  font-size: 4rem;
+  min-width: 80%;
+  font-weight: bold;
+  text-align: right;
+  color: $primary-dark;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    &:focus {
       outline: none;
     }
-    }
+  }
 }
