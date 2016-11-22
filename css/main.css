@@ -7,7 +7,6 @@ body {
   max-width: 80%;
   font-size: 2em;
   color: #563500;
-  border-bottom: 2px solid #563500;
   text-align: center;
   font-family: 'Chewy', sans-serif;
   margin: -.5em auto 0;
@@ -34,11 +33,12 @@ button {
   flex: 1 1 auto;
   min-height: 550px;
   max-width: 400px;
-  background: papayawhip;
+  background: rgba(255, 239, 213, 0.95);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 0.5rem;
+  border: 2px solid #563500;
   box-shadow: 0 0.2rem 0.75rem rgba(0, 0, 0, 0.05); }
   .card.enter {
     animation: enter 400ms forwards; }
@@ -127,7 +127,7 @@ button {
 input {
   margin: 1.5rem 1rem;
   border: 0;
-  background-color: papayawhip;
+  background-color: rgba(255, 239, 213, 0.05);
   font-size: 4rem;
   min-width: 80%;
   font-weight: bold;
